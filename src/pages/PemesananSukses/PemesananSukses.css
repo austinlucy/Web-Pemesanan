@@ -1,0 +1,168 @@
+.sukses-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.sukses-container {
+  background: white;
+  border-radius: 12px;
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sukses-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  animation: bounce 0.8s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.sukses-container h1 {
+  font-size: 36px;
+  color: #333;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+}
+
+.sukses-message {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 40px 0;
+  line-height: 1.6;
+}
+
+.sukses-steps {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.sukses-steps h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.sukses-steps ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sukses-steps li {
+  color: #666;
+  font-size: 14px;
+  padding-left: 0;
+}
+
+.sukses-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-home,
+.btn-gedung {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-home {
+  background: #666;
+  color: white;
+}
+
+.btn-home:hover {
+  background: #555;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 102, 102, 0.3);
+}
+
+.btn-gedung {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-gedung:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sukses-container {
+    padding: 40px 20px;
+  }
+
+  .sukses-icon {
+    font-size: 60px;
+  }
+
+  .sukses-container h1 {
+    font-size: 28px;
+  }
+
+  .sukses-message {
+    font-size: 14px;
+  }
+
+  .sukses-steps {
+    padding: 20px;
+  }
+
+  .sukses-steps h3 {
+    font-size: 16px;
+  }
+
+  .sukses-steps li {
+    font-size: 13px;
+  }
+
+  .btn-home,
+  .btn-gedung {
+    padding: 12px 24px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .sukses-actions {
+    flex-direction: column;
+  }
+}

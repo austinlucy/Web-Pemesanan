@@ -1,12 +1,15 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav';
-import Home from './pages/Home';
-import CariGedung from './pages/CariGedung';
-import Paket from './pages/Paket';
-import TentangKami from './pages/TentangKami';
-import Kontak from './pages/Kontak';
-import Login from './pages/Login';
+import Nav from './components/Nav/Nav';
+import Home from './pages/Home/Home';
+import Products from './pages/Products/Products';
+import Pemesanan from './pages/Pemesanan/Pemesanan';
+import PemesananSukses from './pages/PemesananSukses/PemesananSukses';
+import Kontak from './pages/Kontak/Kontak';
+import SOP from './pages/SOP/SOP';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import AdminDashboard from './pages/AdminDashboard/AdminDashboard';
 
 function App() {
   return (
@@ -15,11 +18,14 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/gedung" element={<CariGedung />} />
-          <Route path="/paket" element={<Paket />} />
-          <Route path="/tentang" element={<TentangKami />} />
+          <Route path="/gedung" element={<Products />} />
+          <Route path="/pemesanan" element={<Pemesanan />} />
+          <Route path="/pemesanan-sukses" element={<PemesananSukses />} />
           <Route path="/kontak" element={<Kontak />} />
+          <Route path="/sop" element={<SOP />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </div>
     </Router>

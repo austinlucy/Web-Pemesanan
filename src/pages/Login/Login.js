@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,17 +39,61 @@ const Login = () => {
     }
 
     // Simulasi API call
-    try {
-      setTimeout(() => {
-        alert('Login berhasil! Email: ' + email);
-        setEmail('');
-        setPassword('');
-        setLoading(false);
-      }, 1000);
-    } catch (err) {
-      setError('Terjadi kesalahan saat login');
+    setTimeout(() => {
+      // Cek di users dari localStorage
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const user = users.find(u => u.email === email && u.password === password);
+
+      // Cek jika admin (hardcoded)
+      const isAdmin = email === 'admin@pemesanan.com' && password === 'admin123';
+
+      if (user) {
+        const userData = {
+          id: user.id,
+          nama: user.nama,
+          email: user.email,
+          noHp: user.noHp,
+          role: user.role,
+          loginTime: new Date().toISOString()
+        };
+
+        localStorage.setItem('currentUser', JSON.stringify(userData));
+        
+        if (rememberMe) {
+          localStorage.setItem('rememberEmail', email);
+        } else {
+          localStorage.removeItem('rememberEmail');
+        }
+
+        if (user.role === 'admin') {
+          navigate('/admin');
+        } else {
+          navigate('/gedung');
+        }
+      } else if (isAdmin) {
+        const adminData = {
+          id: 0,
+          nama: 'Admin Pemesanan',
+          email: 'admin@pemesanan.com',
+          role: 'admin',
+          loginTime: new Date().toISOString()
+        };
+
+        localStorage.setItem('currentUser', JSON.stringify(adminData));
+        
+        if (rememberMe) {
+          localStorage.setItem('rememberEmail', email);
+        } else {
+          localStorage.removeItem('rememberEmail');
+        }
+
+        navigate('/admin');
+      } else {
+        setError('Email atau password salah');
+      }
+
       setLoading(false);
-    }
+    }, 1000);
   };
 
   return (
@@ -97,10 +144,15 @@ const Login = () => {
 
           <div className="form-options">
             <label className="remember-me">
-              <input type="checkbox" name="remember" />
+              <input 
+                type="checkbox" 
+                name="remember" 
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+              />
               Ingat saya
             </label>
-            <a href="#forgot" className="forgot-password">
+            <a href="/forgot-password" className="forgot-password">
               Lupa password?
             </a>
           </div>
@@ -117,13 +169,13 @@ const Login = () => {
         <div className="login-footer">
           <p>
             Belum punya akun?{' '}
-            <a href="#signup" className="signup-link">
+            <a href="/register" className="signup-link">
               Daftar di sini
             </a>
           </p>
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 

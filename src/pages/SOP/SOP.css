@@ -1,0 +1,435 @@
+.sop-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f0f8fc 0%, #e6f3f9 50%, #f2f7fa 100%);
+}
+
+.sop-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sop-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.04) 1px, transparent 1px),
+    repeating-linear-gradient(90deg, 
+      transparent, 
+      transparent 2px, 
+      rgba(255,255,255,0.03) 2px, 
+      rgba(255,255,255,0.03) 4px);
+  background-size: 60px 60px, 80px 80px, 100%;
+  pointer-events: none;
+}
+
+.sop-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.sop-hero-content h1 {
+  font-size: 42px;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.sop-hero-content p {
+  font-size: 18px;
+  margin: 0;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+.sop-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Quick Start */
+.quick-start {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.quick-start h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 30px 0;
+}
+
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.quick-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  background: #f0f2f7;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #e0e0e0;
+}
+
+.quick-link-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+}
+
+.quick-link-btn.whatsapp {
+  background: #25d366;
+  color: white;
+  border-color: #25d366;
+}
+
+.quick-link-btn.whatsapp:hover {
+  background: #128c7e;
+  border-color: #128c7e;
+  color: white;
+}
+
+.link-icon {
+  font-size: 18px;
+}
+
+/* Requirements */
+.requirements-section {
+  margin-bottom: 50px;
+}
+
+.requirements-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.requirement-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: all 0.3s ease;
+  border-top: 3px solid #667eea;
+}
+
+.requirement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.req-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.requirement-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.requirement-card p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* SOP Steps */
+.sop-steps-section {
+  margin-bottom: 50px;
+}
+
+.sop-steps-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sop-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sop-step-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.sop-step-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sop-step-header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background: #f8f9fa;
+}
+
+.sop-step-card.expanded .sop-step-header {
+  background: #f0f2f7;
+  border-bottom: 2px solid #667eea;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.step-content p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.step-toggle {
+  color: #667eea;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.sop-step-card.expanded .step-toggle {
+  transform: rotate(180deg);
+}
+
+.sop-step-details {
+  padding: 20px 20px 20px 90px;
+  border-top: 1px solid #e0e0e0;
+  background: white;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.details-list li {
+  color: #666;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.6;
+}
+
+.checkmark {
+  color: #25d366;
+  font-weight: bold;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Pricing */
+/* CTA */
+.sop-cta {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 50px 40px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sop-cta h2 {
+  font-size: 32px;
+  margin: 0 0 10px 0;
+}
+
+.sop-cta p {
+  font-size: 16px;
+  margin: 0 0 30px 0;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn.primary {
+  background: white;
+  color: #667eea;
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.secondary {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+}
+
+.cta-btn.secondary:hover {
+  background: white;
+  color: #667eea;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .sop-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .sop-hero-content p {
+    font-size: 16px;
+  }
+
+  .sop-container {
+    padding: 25px 15px;
+  }
+
+  .quick-links {
+    flex-direction: column;
+  }
+
+  .quick-link-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .requirements-grid,
+  .tips-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sop-step-header {
+    flex-wrap: wrap;
+  }
+
+  .sop-step-details {
+    padding: 20px;
+  }
+
+  .sop-cta {
+    padding: 30px 20px;
+  }
+
+  .sop-cta h2 {
+    font-size: 24px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .step-icon {
+    font-size: 24px;
+  }
+
+  .step-content h3 {
+    font-size: 16px;
+  }
+
+  .step-content p {
+    font-size: 13px;
+  }
+
+  .sop-step-details {
+    padding: 15px;
+  }
+
+  .faq-columns {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}

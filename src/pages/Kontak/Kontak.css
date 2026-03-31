@@ -1,0 +1,393 @@
+.kontak-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9f5f0 0%, #f5f8fa 50%, #f0eff8 100%);
+}
+
+.kontak-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.kontak-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,0.1) 2px, transparent 2px),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,0.08) 2px, transparent 2px),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.07) 2px, transparent 2px),
+    linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 30%, rgba(255,255,255,0.05) 70%, transparent 70%);
+  background-size: 130px 130px, 200px 200px, 180px 180px, 100%;
+  pointer-events: none;
+}
+
+.kontak-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.kontak-hero-content h1 {
+  font-size: 42px;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.kontak-hero-content p {
+  font-size: 18px;
+  margin: 0;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+.kontak-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 20px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 12px 30px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.kontak-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* WhatsApp Section */
+.whatsapp-section {
+  margin-bottom: 50px;
+}
+
+.whatsapp-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border-top: 4px solid #25d366;
+}
+
+.whatsapp-icon-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-icon {
+  width: 45px;
+  height: 45px;
+  color: white;
+}
+
+.whatsapp-card h2 {
+  font-size: 28px;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.whatsapp-description {
+  color: #666;
+  font-size: 16px;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  margin-bottom: 20px;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-number {
+  color: #25d366;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Contact Details */
+.contact-details {
+  margin-bottom: 50px;
+}
+
+.contact-details h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.contact-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.contact-value {
+  font-size: 16px;
+  color: #667eea;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.contact-description {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Business Hours */
+.business-hours {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 50px;
+}
+
+.business-hours h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 30px 0;
+}
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.hours-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  border-radius: 8px;
+}
+
+.hours-item .day {
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.hours-item .time {
+  color: #667eea;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* FAQ Section */
+.faq-section {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.faq-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 20px;
+  background: #f8f9fa;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: #f0f2f7;
+}
+
+.faq-title {
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: left;
+}
+
+.faq-toggle {
+  color: #667eea;
+  transition: transform 0.3s ease;
+  font-size: 14px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.faq-toggle.open {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 20px;
+  color: #666;
+  line-height: 1.8;
+  background: white;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kontak-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .kontak-hero-content p {
+    font-size: 16px;
+  }
+
+  .kontak-tabs {
+    padding: 20px 15px;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp-card {
+    padding: 25px;
+  }
+
+  .business-hours,
+  .faq-section {
+    padding: 25px;
+  }
+
+  .hours-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .kontak-hero {
+    padding: 40px 15px;
+  }
+
+  .kontak-container {
+    padding: 20px 15px;
+  }
+
+  .faq-question {
+    padding: 15px;
+  }
+
+  .faq-title {
+    font-size: 14px;
+  }
+}

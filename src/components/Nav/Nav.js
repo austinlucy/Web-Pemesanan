@@ -49,7 +49,7 @@ const Nav = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <a href="/">Pemesanan Gedung</a>
+          <a href="/">SIMADU</a>
         </div>
         <ul className="nav-menu">
           <li className="nav-item">
